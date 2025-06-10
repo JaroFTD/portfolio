@@ -73,12 +73,12 @@ function animSectionMain() {
          duration: 0.5,
       }, '-=0.2');
       
-      tl.from('.item-main__icon', {
-         opacity: 0,
-         y: 30,
-         duration: 0.5,
-         stagger: 0.1,
-      });
+      // tl.from('.item-main__icon', {
+      //    opacity: 0,
+      //    y: 30,
+      //    duration: 0.5,
+      //    stagger: 0.1,
+      // });
       
       tl.to('.mouse .mouse-two', {
          strokeDashoffset: 0,
