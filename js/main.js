@@ -315,15 +315,15 @@ function initCursor() {
          y: moveY,
       });
       gsap.to(objCSS, {
-         x: -moveX,
+         x: moveX,
          y: moveY,
       });
       gsap.to(objJS, {
          x: moveX,
-         y: -moveY,
+         y: moveY,
       });
       gsap.to(objImage, {
-         x: -moveX,
+         x: moveX,
          y: moveY,
       });
    });
