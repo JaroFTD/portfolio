@@ -27,7 +27,14 @@ let smoother = ScrollSmoother.create({
 let menuLinks = document.querySelectorAll('[data-goto]');
 menuLinks.forEach(function (item) {
    let href = item.dataset.goto;
+   let menu = document.querySelector('.icon-menu');
+   let menuBody = document.querySelector('.menu__body');
    item.addEventListener("click", () => {
+      if (menu.classList.contains('_active')) {
+         document.body.classList.toggle('_lock');
+         menu.classList.toggle('_active');
+         menuBody.classList.toggle('_active');
+      }
       smoother.scrollTo(href, true, "top 0px")
    });
 });
@@ -301,31 +308,33 @@ function initCursor() {
          duration: 1,
       });
 
-      let objHTML = document.querySelector('.item-main--html');
-      let objCSS = document.querySelector('.item-main--css');
-      let objJS = document.querySelector('.item-main--js');
-      let objImage = document.querySelector('.main__image');
+      if (ScrollTrigger.isTouch === 0) { 
+         let objHTML = document.querySelector('.item-main--html');
+         let objCSS = document.querySelector('.item-main--css');
+         let objJS = document.querySelector('.item-main--js');
+         let objImage = document.querySelector('.main__image');
 
-      const depth = 80;
-      const moveX = (e.pageX - window.innerWidth / 2) / depth;
-      const moveY = (e.pageY - window.innerHeight / 2) / depth;
+         const depth = 80;
+         const moveX = (e.pageX - window.innerWidth / 2) / depth;
+         const moveY = (e.pageY - window.innerHeight / 2) / depth;
 
-      gsap.to(objHTML, {
-         x: moveX,
-         y: moveY,
-      });
-      gsap.to(objCSS, {
-         x: -moveX,
-         y: -moveY,
-      });
-      gsap.to(objJS, {
-         x: moveX,
-         y: -moveY,
-      });
-      gsap.to(objImage, {
-         x: -moveX,
-         y: moveY,
-      });
+         gsap.to(objHTML, {
+            x: moveX,
+            y: moveY,
+         });
+         gsap.to(objCSS, {
+            x: -moveX,
+            y: -moveY,
+         });
+         gsap.to(objJS, {
+            x: moveX,
+            y: -moveY,
+         });
+         gsap.to(objImage, {
+            x: -moveX,
+            y: moveY,
+         });
+      }
    });
    
    images.forEach(function (item) {
