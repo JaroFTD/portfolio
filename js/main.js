@@ -309,20 +309,21 @@ function initCursor() {
       const depth = 80;
       const moveX = (e.pageX - window.innerWidth / 2) / depth;
       const moveY = (e.pageY - window.innerHeight / 2) / depth;
-      gsap.to(objCSS, {
-         x: moveX,
-         y: moveY,
-      });
+
       gsap.to(objHTML, {
          x: moveX,
          y: moveY,
       });
+      gsap.to(objCSS, {
+         x: -moveX,
+         y: -moveY,
+      });
       gsap.to(objJS, {
          x: moveX,
-         y: moveY,
+         y: -moveY,
       });
       gsap.to(objImage, {
-         x: moveX,
+         x: -moveX,
          y: moveY,
       });
    });
