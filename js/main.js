@@ -316,7 +316,7 @@ function initCursor() {
       });
       gsap.to(objCSS, {
          x: -moveX,
-         y: -moveY,
+         y: moveY,
       });
       gsap.to(objJS, {
          x: moveX,
