@@ -73,12 +73,12 @@ function animSectionMain() {
          duration: 0.5,
       }, '-=0.2');
       
-      // tl.from('.item-main__icon', {
-      //    opacity: 0,
-      //    y: 30,
-      //    duration: 0.5,
-      //    stagger: 0.1,
-      // });
+      tl.from('.item-main__icon', {
+         opacity: 0,
+         y: 30,
+         duration: 0.5,
+         stagger: 0.1,
+      });
       
       tl.to('.mouse .mouse-two', {
          strokeDashoffset: 0,
@@ -309,12 +309,11 @@ function initCursor() {
       const depth = 80;
       const moveX = (e.pageX - window.innerWidth / 2) / depth;
       const moveY = (e.pageY - window.innerHeight / 2) / depth;
-
-      gsap.to(objHTML, {
+      gsap.to(objCSS, {
          x: moveX,
          y: moveY,
       });
-      gsap.to(objCSS, {
+      gsap.to(objHTML, {
          x: moveX,
          y: moveY,
       });
